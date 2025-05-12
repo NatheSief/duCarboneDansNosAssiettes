@@ -1,0 +1,94 @@
+    body
+    {
+    font-family: Arial, sans-serif;
+    background: #f7f9fa;
+    margin: 0;
+    padding: 0;
+
+    }
+    
+    .page
+    {
+    display: none;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    min-height: 100vh;
+
+    }
+    
+    .active
+    {
+    display: block;
+
+    }
+    
+    h1
+    {
+    color: #2c3e50;
+
+    }
+    
+    .assiette
+    {
+    width: 250px;
+    margin: 20px auto;
+    border: 2px dashed #ccc;
+    border-radius: 50%;
+    padding: 20px;
+    text-align: center;
+
+    }
+    
+    .aliments
+    {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+
+    }
+    
+    .aliment
+    {
+    width: 100px;
+    cursor: grab;
+
+    }
+    
+    .instructions, .info
+    {
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+
+    }
+    
+    .odds
+    {
+    text-align: center;
+    margin-top: 40px;
+
+    }
+    
+    .odds img
+    {
+    height: 40px;
+    margin: 0 10px;
+
+    }
+    
+    .bt
+    n
+    {
+    display: none;
+    margin: auto;
+    padding: 10px 20px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;    }
