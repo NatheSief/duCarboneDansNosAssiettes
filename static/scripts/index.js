@@ -8,6 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  const hideEtape = (index) => {
+	etapes.forEach((id, i) => {
+		document.getElementById(id).classList.toggle('inactive', i === index);
+	});
+  };
+
   document.getElementById('next-prot').addEventListener('click', () => {
     currentEtape++;
     showEtape(currentEtape);
