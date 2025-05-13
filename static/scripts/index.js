@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const showEtape = (index) => {
     etapes.forEach((id, i) => {
       document.getElementById(id).classList.toggle('active', i === index);
-	  document.getElementById(id).classList.toggle('inactive' i+1 === index);
 	});
   };
 
@@ -21,17 +20,20 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.getElementById('next-prot').addEventListener('click', () => {
-    currentEtape++;
+	hideEtape(currentEtape);
+	currentEtape++;
     showEtape(currentEtape);
   });
 
   document.getElementById('next-feculent').addEventListener('click', () => {
-    currentEtape++;
+    hideEtape(currentEtape);
+	currentEtape++;
     showEtape(currentEtape);
   });
 
   document.getElementById('next-legumes').addEventListener('click', () => {
-    currentEtape++;
+    hideEtape(currentEtape);
+	currentEtape++;
     showEtape(currentEtape);
     afficherTotal();
   });
