@@ -56,3 +56,14 @@
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
+
+/* Visibilite blocs */
+
+.inactive {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+

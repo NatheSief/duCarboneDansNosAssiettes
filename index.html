@@ -14,32 +14,40 @@
 			<p class="description">On calculera la quantite de carbone dans ton assiette a la fin et tu auras une comparaison en distance de ce que tu consommes. </p>
 		</header>
 		<button class="buttons">Valider</button>
+		<section class="active" id="etape-proteines">
 		<div class="composition" id="proteines">
 			<h1>Choisis ta proteine</h1>
 			<div class="aliments">
 				<img src="./static/images/poulet.png" draggable="true">
 				<div class="plate" id="plate1"></div>
-				<button class="button-secondary">Suivant</button>
+				<button class="button-secondary" id="next-prot">Suivant</button>
 			</div>
 		</div>
+		</section>
+		<section class="inactive" id="etape-feculent">
 		<div class="composition" id="feculent">
 			<h1>Choisis ton feculent </h1>
 			<img src="./static/images/pates.png" draggable="true">
 			<div class="plate" id="plate2"></div>
-			<button class="button-secondary">Suivant</button>
+			<button class="button-secondary" id="next-feculent">Suivant</button>
 		</div>
+		</section>
+		<section class="inactive" id="etape-legumes">
 		<div class="composition" id="legumes">
 			<h1>Choisis ton legume</h1>
 			<img src="./static/images/courgettes.png" draggable="true">
 			<div class="plate" id="plate3"></div>
-			<button class="button-secondary">Finir</button>
+			<button class="button-secondary" id="next-legumes">Finir</button>
 		</div>
+		</section>
+		<section class="inactive" id="etape-recap">
 		<div>
 			<h1>Recapitulatif de ton assiette :</h1>
 			<p class="info">Ton choix génère un impact carbone. Pour réduire ton impact, tu pourrais remplacer la viande rouge par du tofu ou du poulet, ce qui est aussi plus économique.</p>
 			<div class="results">
 			</div>
 		</div>
+		</section>
 		<footer class="footer">© All rights reserved - nathe.me 2025– Built with ❤️ </footer>
 	</body>
 	<script src="./static/scripts/index.js"></script>
