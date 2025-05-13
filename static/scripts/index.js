@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const showEtape = (index) => {
     etapes.forEach((id, i) => {
       document.getElementById(id).classList.toggle('active', i === index);
-    });
+	  document.getElementById(id).classList.toggle('inactive' i+1 === index);
+	});
   };
 
   const hideEtape = (index) => {
