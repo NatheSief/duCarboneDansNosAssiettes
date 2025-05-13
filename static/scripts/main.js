@@ -1,39 +1,27 @@
-const setDragEvents = () => {
-  document.querySelectorAll('.aliment').forEach(aliment =>
-    aliment.addEventListener('dragstart', ({ dataTransfer, target }) =>
-      dataTransfer.setData("text/plain", target.dataset.nom)
-    )
-  );
-};
+let current = 0;
+const pages = document.querySelectorAll(".page");
 
-const setDropEvents = () => {
-  document.querySelectorAll('.cercle').forEach(cercle => {
-    cercle.addEventListener('dragover', e => e.preventDefault());
+function nextPage() {
+	pages[current].classList.remove("active");
+    current++;
+    pages[current].classList.add("active");
+}
 
-    cercle.addEventListener('drop', async e => {
-      e.preventDefault();
-      const nom = e.dataTransfer.getData("text/plain");
-
-      ajouterAliment(nom); // appel logique
-
-      const original = document.querySelector(`.aliment[data-nom="${nom}"]`);
-      if (!original) return;
-
-      const clone = original.cloneNode(true);
-      clone.classList.add('dans-le-cercle');
-      cercle.appendChild(clone);
-
-      clone.addEventListener('click', () => {
-        cercle.removeChild(clone);
-        retirerAliment(nom);
-      });
+const assiettes = ["plate1", "plate2", "plate3"];
+assiettes.forEach((id, i) => {
+	const plate = document.getElementById(id);
+    plate.addEventListener("dragover", (e) => e.preventDefault());
+    plate.addEventListener("drop", function (e) {
+    e.preventDefault();
+    const imgSrc = e.dataTransfer.getData("src");
+    plate.innerHTML = `<img src="${imgSrc}" width="120" />`;
+    document.getElementById(`btn${i + 2}`).style.display = "block";
     });
-  });
-};
+});
 
-const initDragDrop = () => {
-  setDragEvents();
-  setDropEvents();
-};
-
-window.addEventListener('DOMContentLoaded', initDragDrop);
+document.querySelectorAll(".aliment").forEach(el => {
+    el.addEventListener("dragstart", function (e) {
+    e.dataTransfer.setData("src", this.src);
+    });
+});
+  
