@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const etapes = ['etape-proteines', 'etape-feculent', 'etape-legumes', 'etape-recap'];
+  const etapes = ['etape-start', 'etape-proteines', 'etape-feculent', 'etape-legumes', 'etape-recap'];
   let currentEtape = 0;
 
   const showEtape = (index) => {
@@ -14,6 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		document.getElementById(id).classList.toggle('inactive', i === index);
 	});
   };
+
+  document.getElementById('start-simu').addEventListener('click', () => {
+	currentEtape++;
+	showEtape(currentEtape);
+  });
 
   document.getElementById('next-prot').addEventListener('click', () => {
     currentEtape++;
