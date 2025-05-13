@@ -1,69 +1,11 @@
-/* Boutons */
-.buttons {
-  display: block;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.btn-primary {
-  background-color: #3b82f6;
-  color: white;
-  font-weight: 600;
-  padding: 0.5rem 1.5rem;
-  border-radius: 0.75rem;
-  transition: background-color 0.2s;
-}
-
-.btn-primary:hover {
-  background-color: #2563eb;
-}
-
-.btn-secondary {
-  border: 1px solid white;
-  color: white;
-  font-weight: 500;
-  padding: 0.5rem 1.5rem;
-  border-radius: 0.75rem;
-  transition: all 0.2s;
-}
-
-.btn-secondary:hover {
-  background-color: white;
-  color: #111827;
-  padding-top: 10px;
-}
-
-/* Footer */
-.footer {
-  padding-top: 2rem;
-  color: #9ca3af;
-  font-size: 0.875rem;
-  text-align: center;
-}
-
-/* Header */
-.title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-
-.description {
-  max-width: 42rem;
-  color: #d1d5db; /* Zinc-300 */
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-/* Visibilite blocs */
-
-.inactive {
-  display: none;
-}
-
-.active {
-  display: block;
-}
-
+body { font-family: Arial, sans-serif; background: #f7f9fa; margin: 0; padding: 0; }
+.page { display: none; padding: 20px; max-width: 800px; margin: auto; background: #fff; min-height: 100vh; }
+.active { display: block; }
+h1 { color: #2c3e50; }
+.assiette { width: 250px; margin: 20px auto; border: 2px dashed #ccc; border-radius: 50%; padding: 20px; text-align: center; }
+.aliments { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 20px 0; }
+.aliment { width: 100px; cursor: grab; }
+.instructions, .info { text-align: center; font-size: 16px; color: #555; }
+.odds { text-align: center; margin-top: 40px; }
+.odds img { height: 40px; margin: 0 10px; }
+.btn { display: none; margin: auto; padding: 10px 20px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
