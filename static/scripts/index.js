@@ -1,85 +1,23 @@
-let currentCategory = 0;
-const categories = ["proteines", "glucides", "legumes"];
-const selections = {};
-
-function loadCategory() {
-  const category = categories[currentCategory];
-  document.getElementById("category-title").innerText = `Choisis un(e) ${category}`;
-  const container = document.getElementById("items-container");
-  container.innerHTML = '';
-  
-  fetch('data/aliments.json')
-  .then(res => res.json())
-  .then(data => {
-      console.log("loadCategorie now is good");
-      Object.keys(data[category]).forEach(nom => {
-        const img = document.createElement("img");
-        img.src = `static/images/${category}/${nom}.png`; // Assurez-vous que l'extension est .png
-        console.log("img.src is");
-        console.log(`static/images/${category}/${nom}.png`);
-        img.alt = nom;
-        img.draggable = true;
-        img.dataset.nom = nom;
-        img.dataset.categorie = category;
-        img.addEventListener("dragstart", e => {
-          e.dataTransfer.setData("text/plain", JSON.stringify({
-            nom: nom,
-            categorie: category
-          }));
-        });
-        container.appendChild(img);
-      });
-    });
+let current = 0;
+const pages = document.querySelectorAll(".page");
+function nextPage() {
+  pages[current].classList.remove("active");
+  current++;
+  pages[current].classList.add("active");
 }
-
-function handleDrop(event) {
-  event.preventDefault();
-  const data = JSON.parse(event.dataTransfer.getData("text/plain"));
-  selections[data.categorie] = data.nom;
-
-  const plate = document.getElementById("plate");
-  plate.innerHTML = '';
-  const img = document.createElement("img");
-  img.src = `static/images/${data.categorie}/${data.nom}.png`; // Assurez-vous que l'extension est .png
-  img.alt = data.nom;
-  img.style.width = "100px";
-  img.style.borderRadius = "8px";
-  plate.appendChild(img);
-}
-
-function nextCategory() {
-  if (!selections[categories[currentCategory]]) {
-    alert("Merci de sélectionner un aliment.");
-    return;
-  }
-  currentCategory++;
-  if (currentCategory < categories.length) {
-    loadCategory();
-  } else {
-    showResults();
-  }
-}
-
-function showResults() {
-  document.getElementById("selection-page").classList.add("hidden");
-  document.getElementById("result-page").classList.remove("hidden");
-  console.log("Show results now is good");
-  calculerEmpreinte(selections);
-}
-
-function closeSelection() {
-  const plate = document.getElementById("plate");
-  plate.innerHTML = '';
-  currentCategory = 0;
-  selections.length = 0;
-  document.getElementById("result-page").classList.add("hidden");
-  document.getElementById("selection-page").classList.remove("hidden");
-}
-
-function startSelection() {
-  document.getElementById("landing-page").classList.add("hidden");
-  document.getElementById("selection-page").classList.remove("hidden");
-  console.log("Sélection des aliments");
-  closeSelection();
-  loadCategory();
-}
+const assiettes = ["plate1", "plate2", "plate3"];
+assiettes.forEach((id, i) => {
+  const plate = document.getElementById(id);
+  plate.addEventListener("dragover", (e) => e.preventDefault());
+  plate.addEventListener("drop", function (e) {
+    e.preventDefault();
+    const imgSrc = e.dataTransfer.getData("src");
+    plate.innerHTML = `<img src="${imgSrc}" width="120" />`;
+    document.getElementById(`btn${i + 2}`).style.display = "block";
+  });
+});
+document.querySelectorAll(".aliment").forEach(el => {
+  el.addEventListener("dragstart", function (e) {
+    e.dataTransfer.setData("src", this.src);
+  });
+});

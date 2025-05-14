@@ -7,38 +7,76 @@
   <link rel="stylesheet" href="static/styles/index.css" />
 </head>
 <body>
-
-  <!-- Page d'accueil -->
-  <section id="landing-page" class="active">
-    <h1>Du Carbonne dans nos assiettes</h1>
-    <p>Choisis une protéine, un glucide et un légume pour découvrir l'empreinte carbone de ton repas.</p>
-    <button onclick="startSelection()">Commencer</button>
-  </section>
-
-  <!-- Sélection des aliments -->
-  <section id="selection-page" class="hidden">
-    <h2 id="category-title">Choisis une protéine</h2>
-    <div class="selection-container">
-      <div id="items-container" class="items"></div>
-      <div id="plate" class="plate" ondragover="event.preventDefault()" ondrop="handleDrop(event)">
-        <p>Glisse ici</p>
-      </div>
+  <div class="page active" id="intro">
+    <h1>Du carbone dans nos assiettes</h1>
+    <p class="instructions">
+      Le concept est de composer une assiette type en glissant un aliment dans l'assiette à chaque étape. Commence par sélectionner une <strong>protéine</strong>, puis un <strong>féculent</strong>, puis un <strong>légume</strong>.
+    </p>
+    <button class="btn" style="display: block" onclick="nextPage()">Valider</button>
+    <div class="odds">
+      <img src="static/images/odd2.svg" alt="ODD2" />
+      <img src="static/images/odd3.svg" alt="ODD3" />
+      <img src="static/images/odd12.svg" alt="ODD12" />
     </div>
-    <button onclick="nextCategory()">Suivant</button>
-  </section>
+  </div>
 
-  <!-- Résultats -->
-  <section id="result-page" class="hidden">
-    <h2>Résultat</h2>
-    <div id="result-content"></div>
-    <button onclick="location.reload()">Recommencer</button>
-  </section>
+  <div class="page" id="proteines">
+    <h1>Étape 1</h1>
+    <p class="instructions">Glisse une protéine dans l'assiette</p>
+    <div class="aliments">
+      <img src="static/images/proteines/poulet.png" class="aliment" draggable="true" />
+      <img src="static/images/proteines/jambon.png" class="aliment" draggable="true" />
+      <img src="static/images/proteines/boeuf.png" class="aliment" draggable="true" />
+      <img src="static/images/proteines/tofu.png" class="aliment" draggable="true" />
+      <img src="static/images/proteines/poisson.png" class="aliment" draggable="true" />
+    </div>
+    <div class="assiette" id="plate1"></div>
+    <p class="info">Les protéines sont essentielles pour construire et réparer les tissus du corps.</p>
+    <button class="btn" id="btn2" onclick="nextPage()">Page suivante</button>
+  </div>
 
-  <!-- Footer -->
+  <div class="page" id="glucides">
+    <h1>Étape 2</h1>
+    <p class="instructions">Glisse un féculent dans l'assiette</p>
+    <div class="aliments">
+      <img src="static/images/glucides/pates.png" class="aliment" draggable="true" />
+      <img src="static/images/glucides/riz.png" class="aliment" draggable="true" />
+      <img src="static/images/glucides/pommes_de_terre.png" class="aliment" draggable="true" />
+      <img src="static/images/glucides/quinoa.png" class="aliment" draggable="true" />
+    </div>
+    <div class="assiette" id="plate2"></div>
+    <p class="info">Les glucides fournissent l'énergie nécessaire au bon fonctionnement de l'organisme.</p>
+    <button class="btn" id="btn3" onclick="nextPage()">Page suivante</button>
+  </div>
+
+  <div class="page" id="legumes">
+    <h1>Étape 3</h1>
+    <p class="instructions">Glisse un légume dans l'assiette</p>
+    <div class="aliments">
+      <img src="static/images/legumes/petits pois carottes.png" class="aliment" draggable="true" />
+      <img src="static/images/legumes/courgettes.png" class="aliment" draggable="true" />
+      <img src="static/images/legumes/tomates.png" class="aliment" draggable="true" />
+      <img src="static/images/legumes/aubergine.png" class="aliment" draggable="true" />
+      <img src="static/images/legumes/chou fleur.png" class="aliment" draggable="true" />
+      <img src="static/images/legumes/poireaux.png" class="aliment" draggable="true" />
+      <img src="static/images/legumes/haricots verts.png" class="aliment" draggable="true" />
+    </div>
+    <div class="assiette" id="plate3"></div>
+    <button class="btn" id="btn4" onclick="nextPage()">Voir le récapitulatif</button>
+  </div>
+
+  <div class="page" id="recap">
+    <h1>Récapitulatif de ton assiette</h1>
+    <div id="summary"></div>
+    <p class="info">Ton choix génère un impact carbone équivalent à un trajet Paris-XX en X mode de transport. Pour réduire ton impact, tu pourrais remplacer la viande rouge par du tofu ou du poulet, ce qui est aussi plus économique et sain.</p>
+    <div class="odds">
+      <img src="static/images/odd2.svg" alt="ODD2" />
+      <img src="static/images/odd3.svg" alt="ODD3" />
+      <img src="static/images/odd12.svg" alt="ODD12" />
+    </div>
+  </div>
   <footer>
-    <p>© All rights reserved - nathe.me 2025 - Built with ❤️</p>
-  </footer>
-  <script src="static/scripts/calcul.js"></script>
+    <p>© All rights reserved - nathe.me 2025 - Built with ❤️</p></footer>
   <script src="static/scripts/index.js"></script>
 </body>
 </html>
