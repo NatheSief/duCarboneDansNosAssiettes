@@ -2,13 +2,6 @@ let currentCategory = 0;
 const categories = ["proteines", "glucides", "legumes"];
 const selections = {};
 
-function startSelection() {
-  document.getElementById("landing-page").classList.add("hidden");
-  document.getElementById("selection-page").classList.remove("hidden");
-  console.log("Sélection des aliments");
-  loadCategory();
-}
-
 function loadCategory() {
   const category = categories[currentCategory];
   document.getElementById("category-title").innerText = `Choisis un(e) ${category}`;
@@ -68,4 +61,11 @@ function showResults() {
   document.getElementById("selection-page").classList.add("hidden");
   document.getElementById("result-page").classList.remove("hidden");
   calculerEmpreinte(selections);
+}
+
+function startSelection() {
+  document.getElementById("landing-page").classList.add("hidden");
+  document.getElementById("selection-page").classList.remove("hidden");
+  console.log("Sélection des aliments");
+  loadCategory();
 }
