@@ -3,15 +3,15 @@ const categories = ["proteines", "glucides", "legumes"];
 const selections = {};
 
 function loadCategory() {
-  console.log("loadCategorie now is good");
   const category = categories[currentCategory];
   document.getElementById("category-title").innerText = `Choisis un(e) ${category}`;
   const container = document.getElementById("items-container");
   container.innerHTML = '';
-
+  
   fetch('data/aliments.json')
-    .then(res => res.json())
-    .then(data => {
+  .then(res => res.json())
+  .then(data => {
+      console.log("loadCategorie now is good");
       Object.keys(data[category]).forEach(nom => {
         const img = document.createElement("img");
         img.src = `static/images/${category}/${nom}.png`; // Assurez-vous que l'extension est .png
