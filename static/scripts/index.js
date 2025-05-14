@@ -19,7 +19,7 @@ function loadCategory() {
     .then(data => {
       Object.keys(data[category]).forEach(nom => {
         const img = document.createElement("img");
-        img.src = `images/${category}/${nom}.jpg`;
+        img.src = `images/${category}/${nom}.png`;
         img.alt = nom;
         img.draggable = true;
         img.dataset.nom = nom;
@@ -43,7 +43,7 @@ function handleDrop(event) {
   const plate = document.getElementById("plate");
   plate.innerHTML = '';
   const img = document.createElement("img");
-  img.src = `images/${data.categorie}/${data.nom}.jpg`;
+  img.src = `images/${data.categorie}/${data.nom}.png`;
   img.alt = data.nom;
   img.style.width = "100px";
   img.style.borderRadius = "8px";
