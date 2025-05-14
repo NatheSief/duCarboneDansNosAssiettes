@@ -15,6 +15,8 @@ function loadCategory() {
       Object.keys(data[category]).forEach(nom => {
         const img = document.createElement("img");
         img.src = `static/images/${category}/${nom}.png`; // Assurez-vous que l'extension est .png
+        console.log("img.src is");
+        conseole.log('static/images/${category}/${nom}.png');
         img.alt = nom;
         img.draggable = true;
         img.dataset.nom = nom;
