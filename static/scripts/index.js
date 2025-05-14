@@ -5,6 +5,7 @@ function nextPage() {
   current++;
   pages[current].classList.add("active");
 }
+
 const assiettes = ["plate1", "plate2", "plate3"];
 assiettes.forEach((id, i) => {
   const plate = document.getElementById(id);
@@ -16,6 +17,7 @@ assiettes.forEach((id, i) => {
     document.getElementById(`btn${i + 2}`).style.display = "block";
   });
 });
+
 document.querySelectorAll(".aliment").forEach(el => {
   el.addEventListener("dragstart", function (e) {
     e.dataTransfer.setData("src", this.src);
