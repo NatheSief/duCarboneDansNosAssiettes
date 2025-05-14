@@ -67,9 +67,19 @@ function showResults() {
   calculerEmpreinte(selections);
 }
 
+function closeSelection() {
+  const plate = document.getElementById("plate");
+  plate.innerHTML = '';
+  currentCategory = 0;
+  selections.length = 0;
+  document.getElementById("result-page").classList.add("hidden");
+  document.getElementById("selection-page").classList.remove("hidden");
+}
+
 function startSelection() {
   document.getElementById("landing-page").classList.add("hidden");
   document.getElementById("selection-page").classList.remove("hidden");
   console.log("Sélection des aliments");
+  closeSelection();
   loadCategory();
 }
