@@ -3,6 +3,7 @@ const categories = ["proteines", "glucides", "legumes"];
 const selections = {};
 
 function loadCategory() {
+  console.log("loadCategorie now is good");
   const category = categories[currentCategory];
   document.getElementById("category-title").innerText = `Choisis un(e) ${category}`;
   const container = document.getElementById("items-container");
@@ -60,6 +61,7 @@ function nextCategory() {
 function showResults() {
   document.getElementById("selection-page").classList.add("hidden");
   document.getElementById("result-page").classList.remove("hidden");
+  console.log("Show results now is good");
   calculerEmpreinte(selections);
 }
 
