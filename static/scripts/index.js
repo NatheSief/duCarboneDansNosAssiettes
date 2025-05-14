@@ -5,7 +5,7 @@ const selections = {};
 function startSelection() {
   document.getElementById("landing-page").classList.add("hidden");
   document.getElementById("selection-page").classList.remove("hidden");
-  consoles.log("Sélection des aliments");
+  console.log("Sélection des aliments");
   loadCategory();
 }
 
