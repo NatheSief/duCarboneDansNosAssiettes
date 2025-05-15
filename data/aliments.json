@@ -10,15 +10,17 @@
     "pates": 1.3,
     "riz": 2.7,
     "quinoa": 1.5,
-    "pommes_de_terre": 0.6
-  },
-  "legumes": {
+    "pommes_de_terre": 0.6,
+    "polenta": 0.66
+},
+"legumes": {
     "aubergine": 0.75,
     "chou fleur": 0.72,
     "courgettes": 0.5,
     "haricots verts": 1.2,
     "petits pois carottes": 1.44,
     "poireaux": 1.48,
-    "tomates": 0.75
+    "tomates": 0.75,
+    "patate": 0.33
   }
 }
