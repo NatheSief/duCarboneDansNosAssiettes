@@ -1,0 +1,148 @@
+.page {
+  display: none;
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  min-height: 100vh;
+}
+
+.active {
+  display: block;
+}
+
+h1 {
+  color: #2c3e50;
+}
+
+.assiette {
+  width: 250px;
+  margin: 20px auto;
+  border: 2px dashed #ccc;
+  border-radius: 50%;
+  padding: 20px;
+  text-align: center;
+}
+
+.instructions, .info {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+}
+
+.btn {
+  display: none;
+  margin: auto;
+  padding: 10px 20px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #333;
+  text-align: center;
+  padding: 2rem;
+}
+
+.aliments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.aliment {
+  width: 100px;
+  cursor: grab;
+}
+
+.odds {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.odds img {
+  height: 40px;
+  margin: 0 10px;
+}
+
+section {
+  display: none;
+  max-width: 800px;
+  margin: auto;
+}
+
+section.active {
+  display: block;
+}
+
+h1, h2 {
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  margin-top: 1rem;
+  background: #5cdb95;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.selection-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 400px;
+}
+
+.items img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  cursor: grab;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.items img:hover {
+  transform: scale(1.05);
+}
+
+.plate {
+  width: 200px;
+  height: 200px;
+  border: 3px dashed #999;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+#result-content {
+  font-size: 1.2rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
