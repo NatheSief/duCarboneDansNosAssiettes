@@ -36,6 +36,7 @@ function nextPage(id) {
     carbon += data[id][document.getElementById(id).dataset.type];
     spanOut.innerText = (carbon * 10 / 2.18).toFixed(2);
     console.log(carbon);
+    console.log(data[id][document.getElementById(id).dataset.type]);
   }
 
   pages[current].classList.remove("active");
