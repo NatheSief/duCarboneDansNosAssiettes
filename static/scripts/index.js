@@ -30,10 +30,10 @@ let carbon = 0;
 
 let current = 0;
 const pages = document.querySelectorAll(".page");
-function nextPage(id) {
+function nextPage(id, plate) {
   if (id)
   {
-    carbon += data[id][document.getElementById(id).dataset.type];
+    carbon += data[id][document.getElementById(plate).dataset.type];
     spanOut.innerText = (carbon * 10 / 2.18).toFixed(2);
     console.log(carbon);
     console.log(data[id][document.getElementById(id).dataset.type]);
