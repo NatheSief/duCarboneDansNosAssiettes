@@ -17,10 +17,10 @@ const data = {
 },
 "legumes": {
     "aubergine": 0.75,
-    "chou fleur": 0.72,
+    "chou": 0.72,
     "courgettes": 0.5,
-    "haricots verts": 1.2,
-    "petits pois carottes": 1.44,
+    "haricots": 1.2,
+    "pois": 1.44,
     "poireaux": 1.48,
     "tomates": 0.75,
     "lentilles": 0.58
