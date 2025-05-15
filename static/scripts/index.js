@@ -26,7 +26,6 @@ const data = {
     "lentilles": 0.58
   }
 }
-
 let carbon = 0;
 
 let current = 0;
@@ -36,6 +35,7 @@ function nextPage(id) {
   {
     carbon += data[id][document.getElementById(id).dataset.type];
     spanOut.innerText = (carbon * 10 / 2.18).toFixed(2);
+    console.log(carbon);
   }
 
   pages[current].classList.remove("active");
